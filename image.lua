@@ -44218,36 +44218,31 @@ cam.Name = "ThumbnailCamera"
 cam.FieldOfView = 70
 cam.Parent = model
 
--- Lighting Setup
+-- Lighting Setup (absolute flat)
 local Lighting = game:GetService("Lighting")
 Lighting.ClockTime = 12
 Lighting.Brightness = 0
 Lighting.GlobalShadows = false
-Lighting.OutdoorAmbient = Color3.new(1, 1, 1)
-Lighting.Ambient = Color3.new(1, 1, 1)
+Lighting.OutdoorAmbient = Color3.new(0, 0, 0)
+Lighting.Ambient = Color3.new(0, 0, 0)
 Lighting.EnvironmentDiffuseScale = 0
 Lighting.EnvironmentSpecularScale = 0
 Lighting.GeographicLatitude = 0
 Lighting.ExposureCompensation = 0
 
--- Add PointLight
-local lightPart = Instance.new("Part")
-lightPart.Size = Vector3.new(1, 1, 1)
-lightPart.Anchored = true
-lightPart.CanCollide = false
-lightPart.Transparency = 1
-lightPart.Position = Vector3.new(21, 21, 25)
-lightPart.Parent = model
+-- ❌ NO LIGHTS AT ALL
+-- (Removed PointLight block)
 
-local light = Instance.new("PointLight")
-light.Brightness = 2
-light.Range = 60
-light.Color = Color3.new(1, 1, 1)
-light.Parent = lightPart
+-- Assets
+local Bait = game:GetService("ReplicatedStorage")
+    :WaitForChild("Model Method V2")
+    :WaitForChild("2.7.4")
+    :Clone()
 
--- Bait + Light assets
-local Bait = game:GetService("ReplicatedStorage"):WaitForChild("Model Method V2"):WaitForChild("2.7.4"):Clone()
-local Lights = game:GetService("ReplicatedStorage"):WaitForChild("Model Method V2"):WaitForChild("Lights"):Clone()
+local Lights = game:GetService("ReplicatedStorage")
+    :WaitForChild("Model Method V2")
+    :WaitForChild("Lights")
+    :Clone()
 
 Bait.Name = "Playground"
 Bait.Parent = model
