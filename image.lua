@@ -65690,10 +65690,12 @@ table.insert(ps, Vector3.new(40.8000, 0.1600, 0)) table.insert(cs, Color3.new(0.
 BulkCreate(ps, cs)
 
 -- Camera Setup
-local cam = workspace.CurrentCamera:Clone()
-cam.CameraType = Enum.CameraType.Custom
-cam.CFrame = CFrame.new(Vector3.new(w * BLOCK_SIZE / 2, h * BLOCK_SIZE / 2, 32)) -- Dynamic centering
+local cam = Instance.new("Camera")
 cam.Name = "ThumbnailCamera"
+cam.CameraType = Enum.CameraType.Scriptable
+local centerX = (w * BLOCK_SIZE) / 2
+local centerY = (h * BLOCK_SIZE) / 2
+cam.CFrame = CFrame.new(Vector3.new(centerX, centerY, 35), Vector3.new(centerX, centerY, 0))
 cam.FieldOfView = 70
 cam.Parent = model
 
