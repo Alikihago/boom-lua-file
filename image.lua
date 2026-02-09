@@ -44229,26 +44229,9 @@ Lighting.EnvironmentDiffuseScale = 0
 Lighting.EnvironmentSpecularScale = 0
 Lighting.ExposureCompensation = 0
 
--- Add PointLight
-local lightPart = Instance.new("Part")
-lightPart.Size = Vector3.new(1, 1, 1)
-lightPart.Anchored = true
-lightPart.CanCollide = false
-lightPart.Transparency = 1
-lightPart.Position = Vector3.new(21, 21, 25)
-lightPart.Parent = model
-
-local light = Instance.new("PointLight")
-light.Brightness = 2
-light.Range = 60
-light.Color = Color3.new(1, 1, 1)
-light.Parent = lightPart
-
--- Bait + Light assets
+-- Bait assets (Lighting removed)
 local ModelMethodV2 = game:GetService("ReplicatedStorage"):WaitForChild("Model Method V2")
 local Bait = ModelMethodV2:WaitForChild("2.7.4"):Clone()
-local Lights = ModelMethodV2:WaitForChild("Lights"):Clone()
 
 Bait.Name = "Playground"
 Bait.Parent = model
-Lights.Parent = model
